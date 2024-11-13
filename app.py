@@ -5,3 +5,8 @@ import requests
 
 app = Flask(__name__)
 CORS(app)
+
+# MySQL Config
+app.config['MYSQL_USER'] = 'root'
+app.config['MYSQL_PASSWORD'] = 'root'
+app.config['MYSQL_HOST'] = 'localhost'
