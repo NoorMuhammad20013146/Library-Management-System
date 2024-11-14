@@ -35,7 +35,7 @@ def add_book():
     if not isbn:
         return {"error": "ISBN is required"}, 400
 
-
+    cur = mysql.connection.cursor()
 
 if __name__ == '__main__':
     app.run(debug=True)
