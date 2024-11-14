@@ -32,8 +32,9 @@ def add_book():
         return {"error": "Title is required"}, 400
     if not author:
         return {"error": "Author is required"}, 400
-    
-    
+    if not isbn:
+        return {"error": "ISBN is required"}, 400
+
 
 
 if __name__ == '__main__':
