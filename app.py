@@ -23,6 +23,10 @@ def home():
 #Add A new Function
 def add_book():
     data = request.json
+    title = data['title']
+    author = data['author']
+    isbn = data['isbn']
+
 
 if __name__ == '__main__':
     app.run(debug=True)
