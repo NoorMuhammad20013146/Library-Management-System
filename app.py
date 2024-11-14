@@ -29,7 +29,10 @@ def add_book():
 
 
     if not title:
-    return {"error": "Title is required"}, 400
+        return {"error": "Title is required"}, 400
+    if not author:
+        return {"error": "Author is required"}, 400
+    
     
 
 
