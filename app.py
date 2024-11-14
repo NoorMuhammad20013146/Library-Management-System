@@ -28,5 +28,10 @@ def add_book():
     isbn = data['isbn']
 
 
+    if not title:
+    return {"error": "Title is required"}, 400
+    
+
+
 if __name__ == '__main__':
     app.run(debug=True)
