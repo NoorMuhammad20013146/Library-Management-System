@@ -36,6 +36,7 @@ def add_book():
         return {"error": "ISBN is required"}, 400
 
     cur = mysql.connection.cursor()
+    cur.execute("INSERT INTO books (title, author, isbn) VALUES (%s, %s, %s)", (title, author, isbn))
 
 if __name__ == '__main__':
     app.run(debug=True)
