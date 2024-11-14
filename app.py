@@ -37,6 +37,7 @@ def add_book():
 
     cur = mysql.connection.cursor()
     cur.execute("INSERT INTO books (title, author, isbn) VALUES (%s, %s, %s)", (title, author, isbn))
+    mysql.connection.commit()
 
 if __name__ == '__main__':
     app.run(debug=True)
