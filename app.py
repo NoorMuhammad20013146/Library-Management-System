@@ -39,7 +39,7 @@ def add_book():
     cur.execute("INSERT INTO books (title, author, isbn) VALUES (%s, %s, %s)", (title, author, isbn))
     mysql.connection.commit()
     cur.close()
-    
+    return jsonify({'message': 'Book added successfully'}), 201
 
 if __name__ == '__main__':
     app.run(debug=True)
