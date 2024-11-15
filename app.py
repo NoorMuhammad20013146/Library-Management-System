@@ -21,6 +21,7 @@ def home():
     return render_template('index.html')
 
 #Add A new Function
+@app.route('/books', methods=['POST'])
 def add_book():
     data = request.json
     title = data['title']
