@@ -68,8 +68,16 @@
     editingBookId = null;
     document.getElementById('add-edit-btn').textContent = 'Add Book';
     document.getElementById('cancel-btn').classList.add('hidden');
+    } else {
+        //Add Mode
+        await fetch('/books', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ title, author, isbn })
+        });
     }
-    
+
+
 }
 
     </script>
