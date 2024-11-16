@@ -10,7 +10,7 @@ CORS(app)
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'root'
 app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_DB'] = 'bookstore'
+app.config['MYSQL_DB'] = 'bookstores'
 app.config['MYSQL_CURSORCLASS'] = 'DictCursor'
 
 mysql = MySQL(app)
@@ -35,14 +35,14 @@ def add_book():
     title = data['title']
     author = data['author']
     isbn = data['isbn']
-#Add Validations
+    #Add Validations
     if not title:
         return {"error": "Title is required"}, 400
     if not author:
         return {"error": "Author is required"}, 400
     if not isbn:
         return {"error": "ISBN is required"}, 400
-#Save details into Database
+    #Save details into Database
     cur = mysql.connection.cursor()
     cur.execute("INSERT INTO books (title, author, isbn) VALUES (%s, %s, %s)", (title, author, isbn))
     mysql.connection.commit()
