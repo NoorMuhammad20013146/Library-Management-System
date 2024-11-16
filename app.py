@@ -23,7 +23,9 @@ def home():
 #Retrive All books
 @app.route('/books' , methods=['GET'])
 def get_books():
-    
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM books")
+    books = cur.fetchall()
 #Add A new Function
 @app.route('/books', methods=['POST'])
 def add_book():
