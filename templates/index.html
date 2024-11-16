@@ -51,34 +51,35 @@
                 </td>
             </tr>
         `).join('');
-    }
-    // Add or edit Book
-    async function addOrEditBook() {
-    const title = document.getElementById('title').value;
-    const author = document.getElementById('author').value;
-    const isbn = document.getElementById('isbn').value;
+        }
+        // Add or edit Book
+        async function addOrEditBook() {
+        const title = document.getElementById('title').value;
+        const author = document.getElementById('author').value;
+        const isbn = document.getElementById('isbn').value;
 
-    if (editingBookId) {
-        //Edit Book
-        await fetch(`/books/${editingBookId}`, {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ title, author, isbn })
-    });
-    editingBookId = null;
-    document.getElementById('add-edit-btn').textContent = 'Add Book';
-    document.getElementById('cancel-btn').classList.add('hidden');
-    } else {
-        //Add Mode
-        await fetch('/books', {
-            method: 'POST',
+        if (editingBookId) {
+            //Edit Book
+            await fetch(`/books/${editingBookId}`, {
+            method: 'PUT',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify({ title, author, isbn })
         });
-    }
-    resetForm();
-    fetchBooks();
-    }
+        editingBookId = null;
+        document.getElementById('add-edit-btn').textContent = 'Add Book';
+        document.getElementById('cancel-btn').classList.add('hidden');
+        } else {
+            //Add Mode
+            await fetch('/books', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ title, author, isbn })
+            });
+        }
+        resetForm();
+        fetchBooks();
+        }
+        //
 
     </script>
 </body>

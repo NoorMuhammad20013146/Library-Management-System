@@ -20,6 +20,9 @@ mysql = MySQL(app)
 def home():
     return render_template('index.html')
 
+#Retrive All books
+@app.route('/books' , methods=['GET'])
+
 #Add A new Function
 @app.route('/books', methods=['POST'])
 def add_book():
