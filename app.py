@@ -49,5 +49,9 @@ def add_book():
     cur.close()
     return jsonify({'message': 'Book added successfully'}), 201
 
+#Updating book Function and using ID
+@app.route('/books/<int:id>', methods=['PUT'])
+def update_book(id):
+
 if __name__ == '__main__':
     app.run(debug=True)
