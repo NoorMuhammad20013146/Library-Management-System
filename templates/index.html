@@ -82,7 +82,9 @@
         }
         //Edit a book
         function editBook(id, name, author, isbn) {
-
+            document.getElementById('title').value = title;
+            document.getElementById('author').value = author;
+            document.getElementById('isbn').value = isbn;
         }
         //Fecth book on load page
         fetchBooks();
