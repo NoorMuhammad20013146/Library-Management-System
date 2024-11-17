@@ -56,6 +56,11 @@ def update_book(id):
     title = data['title']
     author = data['author']
     isbn = data['isbn']
+
+    cur = mysql.connection.cursor()
+    cur.execute("UPDATE books SET title = %s, author = %s, isbn = %s WHERE id = %s", (title, author, isbn, id))
+    mysql.connection.commit()
+    cur.close()
     
 if __name__ == '__main__':
     app.run(debug=True)
