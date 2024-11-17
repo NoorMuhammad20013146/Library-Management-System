@@ -52,6 +52,10 @@ def add_book():
 #Updating book Function and using ID
 @app.route('/books/<int:id>', methods=['PUT'])
 def update_book(id):
-
+    data = request.json
+    title = data['title']
+    author = data['author']
+    isbn = data['isbn']
+    
 if __name__ == '__main__':
     app.run(debug=True)
