@@ -61,6 +61,7 @@ def update_book(id):
     cur.execute("UPDATE books SET title = %s, author = %s, isbn = %s WHERE id = %s", (title, author, isbn, id))
     mysql.connection.commit()
     cur.close()
-    
+    return jsonify({'message':'Book Updated Successfully'})
+
 if __name__ == '__main__':
     app.run(debug=True)
