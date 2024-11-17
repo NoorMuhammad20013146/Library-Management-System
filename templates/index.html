@@ -93,7 +93,11 @@
         //Cancel Editing and Reset Form Function
         function resetForm(){
             editingBookId = null;
-            
+            document.getElementById('title').value='';
+            document.getElementById('author').value='';
+            document.getElementById('isbn').value='';
+            document.getElementById('add-edit-btn').textContent = 'Add Book';
+            document.getElementById('cancel-btn').classList.remove('hidden');
         }
 
         //Fecth book on load page
