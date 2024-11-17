@@ -6,7 +6,7 @@
     <title>Library Management System</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gray-200 text-gray-800">
     <div class="container mx-auto mt-10">
         <h1 class="text-3xl font-bold mb-5">Library Management System</h1>
 
@@ -80,6 +80,7 @@
         resetForm();
         fetchBooks();
         }
+
         //Edit a book
         function editBook(id, name, author, isbn) {
             editingBookId = id;
@@ -89,6 +90,7 @@
             document.getElementById('add-edit-btn').textContent = 'Update Book';
             document.getElementById('cancel-btn').classList.remove('hidden');
         }
+
         //Fecth book on load page
         fetchBooks();
     </script>
