@@ -20,7 +20,7 @@
         </div>
          <!-- Book List -->
          <h2 class="text-2xl font-semibold mb-3">Book List</h2>
-         <table class="min-w-full bg-white">
+         <table class="min-w-full bg-white bordered-table">
              <thead>
                  <tr>
                      <th class="py-2">Title</th>
@@ -89,6 +89,11 @@
             document.getElementById('isbn').value = isbn;
             document.getElementById('add-edit-btn').textContent = 'Update Book';
             document.getElementById('cancel-btn').classList.remove('hidden');
+        }
+        //Cancel Editing and Reset Form Function
+        function resetForm(){
+            editingBookId = null;
+            
         }
 
         //Fecth book on load page
