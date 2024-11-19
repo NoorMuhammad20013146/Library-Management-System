@@ -71,6 +71,7 @@ def delete_book(id):
     cur.execute("DELETE FROM books WHERE id=%s, (id,)")
     mysql.connection.commit()
     cur.close()
-    
+    return jsonify({'message': 'Book deleted successfully'})
+
 if __name__ == '__main__':
     app.run(debug=True)
