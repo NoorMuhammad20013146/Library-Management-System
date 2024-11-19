@@ -63,7 +63,10 @@ def update_book(id):
     cur.close()
     return jsonify({'message':'Book Updated Successfully'})
 
+
 #Delete a Book Function
 @app.route('/book/<int:id>' , methods=['DELETE'])
+def delete_book(id):
+    
 if __name__ == '__main__':
     app.run(debug=True)
