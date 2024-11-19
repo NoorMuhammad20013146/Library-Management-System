@@ -65,7 +65,7 @@ def update_book(id):
 
 
 #Delete a Book Function
-@app.route('/book/<int:id>' , methods=['DELETE'])
+@app.route('/books/<int:id>', methods=['DELETE'])
 def delete_book(id):
     cur = mysql.connection.cursor()
     cur.execute("DELETE FROM books WHERE id=%s", (id,))
