@@ -103,6 +103,7 @@
         //Delete Book Function
         async function deleteBook(id){
             await fetch(`/books/${id}` , {method: 'DELETE'});
+            fetchBooks();
         }
         //Fecth book on load page
         fetchBooks();
