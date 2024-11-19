@@ -68,7 +68,7 @@ def update_book(id):
 @app.route('/book/<int:id>' , methods=['DELETE'])
 def delete_book(id):
     cur = mysql.connection.cursor()
-    cur.execute("DELETE FROM books WHERE id=%s, (id,)")
+    cur.execute("DELETE FROM books WHERE id=%s", (id,))
     mysql.connection.commit()
     cur.close()
     return jsonify({'message': 'Book deleted successfully'})
