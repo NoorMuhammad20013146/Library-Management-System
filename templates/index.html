@@ -100,6 +100,10 @@
             document.getElementById('cancel-btn').classList.remove('hidden');
         }
 
+        //Delete Book Function
+        async function deleteBook(id){
+            await fetch(`/books/${id}` , {method: 'DELETE'});
+        }
         //Fecth book on load page
         fetchBooks();
     </script>
