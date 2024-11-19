@@ -15,11 +15,11 @@
             <input type="text" id="title" placeholder="Title" class="border p-2 mr-2">
             <input type="text" id="author" placeholder="Author" class="border p-2 mr-2">
             <input type="text" id="isbn" placeholder="ISBN" class="border p-2 mr-2">
-            <button id="add-edit-btn" onclick="addOrEditBook()" class="bg-blue-500 text-white px-4 py-2">Add Book</button>
-            <button id="cancel-btn" onclick="resetForm()" class="bg-gray-500 text-white px-4 py-2 hidden">Cancel</button>
+            <button id="add-edit-btn" onclick="addOrEditBook()" class="bg-blue-500 text-white px-20 py-2">Add Book</button>
+            <button id="cancel-btn" onclick="resetForm()" class="bg-gray-500 text-white px-20 py-2 hidden">Cancel</button>
         </div>
          <!-- Book List -->
-         <h2 class="text-2xl font-semibold mb-3">Book List</h2>
+         <h2 class="text-2xl font-semibold mb-3 ">Book List</h2>
          <table class="min-w-full bg-white bordered-table">
              <thead>
                  <tr>
@@ -47,8 +47,8 @@
                 <td class="py-2">${book.author}</td>
                 <td class="py-2">${book.isbn}</td>
                 <td class="py-2">
-                    <button onclick="editBook(${book.id}, '${book.title}', '${book.author}', '${book.isbn}')" class="bg-yellow-500 text-white px-2 py-1">Edit</button>
-                    <button onclick="deleteBook(${book.id})" class="bg-red-500 text-white px-2 py-1">Delete</button>
+                    <button onclick="editBook(${book.id}, '${book.title}', '${book.author}', '${book.isbn}')" class="bg-yellow-500 text-white px-10 py-2">Edit</button>
+                    <button onclick="deleteBook(${book.id})" class="bg-red-500 text-white px-10 py-2">Delete</button>
                 </td>
             </tr>
         `).join('');
