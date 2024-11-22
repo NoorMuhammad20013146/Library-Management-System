@@ -74,6 +74,10 @@ def delete_book(id):
     return jsonify({'message': 'Book deleted successfully'})
 #Search for book info using Open Library API
 @app.route('/search',methods=['GET'])
-
+def search_book()
+    isbn = request.args.get('isbn') #Get the isbn from query parameters
+    if not isbn:
+        return jsonify({'error':'ISBN is required'}), 400
+    
 if __name__ == '__main__':
     app.run(debug=True)
