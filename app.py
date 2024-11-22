@@ -72,6 +72,8 @@ def delete_book(id):
     mysql.connection.commit()
     cur.close()
     return jsonify({'message': 'Book deleted successfully'})
+#Search for book info using Open Library API
+@app.route('/search',methods=['GET'])
 
 if __name__ == '__main__':
     app.run(debug=True)
