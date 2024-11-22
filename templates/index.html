@@ -115,6 +115,14 @@
             await fetch(`/books/${id}`, { method: 'DELETE' });
             fetchBooks();
         }
+        //add searchbook function to fetch book info by isbn
+        async function searchBook() {
+            const isbn = document.getElementById('isbn').value;
+            fetch(`/search?isbn=${encodeURIComponent(isbn)}`)
+                .then(response => response.json())
+                .then(data => displayBookInfo(data))
+                .catch(error => console.error('Error fetching book info:', error));
+        }
         //Fecth book on load page
         fetchBooks();
     </script>
