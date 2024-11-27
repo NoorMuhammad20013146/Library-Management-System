@@ -73,16 +73,13 @@ def delete_book(id):
     cur.close()
     return jsonify({'message': 'Book deleted successfully'})
 #Search for book info using Open Library API
-@app.route('/search',methods=['GET'])
+@app.route('/search', methods=['GET'])
 def search_book():
-    isbn = request.args.get('isbn') #Get the isbn from query parameters
-    response = request.get(f'http://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&format=json&jscmd=data')
-    if not isbn:
-        return jsonify({'error':'ISBN is required'}), 400
-    if response.status_code == 200 and response.json():
+    isbn = request.args.get('isbn')
+    response = requests.get(f'https://openlibrary.org/api/books?bibkeys=ISBN:{isbn}&format=json&jscmd=data')
+    if response.status_code == 200:
         return jsonify(response.json())
     else:
-        return jsonify({'error':'Book not found'}), 404
-    
+        return jsonify({'error': 'Book not found'}), 404
 if __name__ == '__main__':
     app.run(debug=True)
