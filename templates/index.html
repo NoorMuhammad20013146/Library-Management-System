@@ -155,6 +155,12 @@
             const isbnInput = document.getElementById('isbn-search');
             const bookDetails = document.getElementById('book-details');
             const bookInfoDiv = document.getElementById('book-info');
+            // Clear input field
+            isbnInput.value = '';
+
+            // Clear and hide search results
+            bookDetails.innerHTML = '';
+            bookInfoDiv.classList.add('hidden');
         }
 
         //Fecth book on load page
