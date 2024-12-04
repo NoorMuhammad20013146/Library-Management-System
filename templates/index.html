@@ -129,9 +129,21 @@
             const response = await fetch(`/search?isbn=${isbn}`);
             const bookInfo = await response.json();
 
+            //Display book details on successful search
+            const bookDetails = document.getElementById('book-details');
+            const bookInfoDiv = document.getElementById('book-info');
 
-            // Placeholder for fetch logic
-            console.log(`Searching for ISBN: ${isbn}`);
+            if (response.ok) {
+                //Clear previous details
+                bookDetails.innerHTML = `
+                    <p><strong>Title:</strong> ${bookInfo[`ISBN:${isbn}`]?.title || 'N/A'}</p>
+                    <p><strong>Authors:</strong> ${bookInfo[`ISBN:${isbn}`]?.authors?.map(a => a.name).join(', ') || 'N/A'}</p>
+                    <p><strong>Published:</strong> ${bookInfo[`ISBN:${isbn}`]?.publish_date || 'N/A'}</p>
+                `;
+                bookInfoDiv.classList.remove('hidden');
+            }
+            
+
         }
 
 
