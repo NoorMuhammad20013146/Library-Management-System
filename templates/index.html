@@ -148,11 +148,14 @@
                     bookDetails.innerHTML = `<p class="text-red-500">Book not found.</p>`;
                     bookInfoDiv.classList.remove('hidden');
                 }
-
-
-
         }
 
+        // Clear Search Input and Hide Search Results
+        function clearSearch() {
+            const isbnInput = document.getElementById('isbn-search');
+            const bookDetails = document.getElementById('book-details');
+            const bookInfoDiv = document.getElementById('book-info');
+        }
 
         //Fecth book on load page
         fetchBooks();
