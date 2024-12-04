@@ -10,16 +10,18 @@
     <div class="container mx-auto mt-10">
         <h1 class="text-3xl font-bold mb-5">Library Management System</h1>
 
-        <!-- Add/Edit Book Form -->
+        <!-- Search Book by ISBN -->
+        <div class="mb-5">
+            <input type="text" id="isbn-search" placeholder="Enter ISBN to Search" class="border p-2 w-1/4">
+            <button onclick="searchBook()" class="bg-green-500 text-white px-10 py-2">Search</button>
+        </div>
 
-        <div id="book-info" class="mt-2 p-2 border rounded ">
+        <div id="book-info" class="mt-5 p-5 border rounded hidden bg-white">
             <h3 class="text-xl font-semibold mb-3">Book Information</h3>
             <div id="book-details"></div>
         </div>
-        <div class="mb-5">
-        <!--Search book info by ISBN-->
-            <input type="text" id="isbn-search" placeholder="Enter ISBN to Search" class="border p-2 w-1/4">
-        </div>
+
+        
         <div class="mb-5">
             <input type="text" id="title" placeholder="Title" class="border p-2 mr-2">
             <input type="text" id="author" placeholder="Author" class="border p-2 mr-2">
