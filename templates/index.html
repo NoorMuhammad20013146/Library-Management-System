@@ -116,6 +116,21 @@
             await fetch(`/books/${id}`, { method: 'DELETE' });
             fetchBooks();
         }
+        
+        // Search Book by ISBN
+        async function searchBook() {
+            const isbn = document.getElementById('isbn-search').value.trim();
+
+            if (!isbn) {
+                alert("Please enter an ISBN to search.");
+                return;
+            }
+
+            // Placeholder for fetch logic
+            console.log(`Searching for ISBN: ${isbn}`);
+        }
+
+
         //Fecth book on load page
         fetchBooks();
     </script>
