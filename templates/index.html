@@ -142,7 +142,13 @@
                 `;
                 bookInfoDiv.classList.remove('hidden');
             }
-            
+            //Handle errors when book is not found
+            else {
+                    bookDetails.innerHTML = `<p class="text-red-500">Book not found.</p>`;
+                    bookInfoDiv.classList.remove('hidden');
+                }
+
+
 
         }
 
