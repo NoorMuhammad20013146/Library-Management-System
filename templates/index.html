@@ -116,7 +116,7 @@
             await fetch(`/books/${id}`, { method: 'DELETE' });
             fetchBooks();
         }
-        
+
         // Search Book by ISBN
         async function searchBook() {
             const isbn = document.getElementById('isbn-search').value.trim();
@@ -125,6 +125,10 @@
                 alert("Please enter an ISBN to search.");
                 return;
             }
+            //add fetch logic to call/search API endpoint
+            const response = await fetch(`/search?isbn=${isbn}`);
+            const bookInfo = await response.json();
+
 
             // Placeholder for fetch logic
             console.log(`Searching for ISBN: ${isbn}`);
